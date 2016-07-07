@@ -109,7 +109,7 @@
         [NSThread sleepForTimeInterval:1.0];
     }];
     
-    //4.设置依赖
+    //4.设置依赖(注意:不能相互依赖,会产生死锁)
     [operation2 addDependency:operation1];      //任务二依赖任务一
     [operation3 addDependency:operation2];      //任务三依赖任务二
     
