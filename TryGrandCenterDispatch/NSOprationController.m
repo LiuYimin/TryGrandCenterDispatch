@@ -89,6 +89,35 @@
     
     
     
+    //添加依赖
+    
+    //1.任务一：下载图片
+    NSBlockOperation *operation1 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"下载图片 - %@", [NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1.0];
+    }];
+    
+    //2.任务二：打水印
+    NSBlockOperation *operation2 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"打水印   - %@", [NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1.0];
+    }];
+    
+    //3.任务三：上传图片
+    NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
+        NSLog(@"上传图片 - %@", [NSThread currentThread]);
+        [NSThread sleepForTimeInterval:1.0];
+    }];
+    
+    //4.设置依赖
+    [operation2 addDependency:operation1];      //任务二依赖任务一
+    [operation3 addDependency:operation2];      //任务三依赖任务二
+    
+    //5.创建队列并加入任务
+    NSOperationQueue *queue1 = [[NSOperationQueue alloc] init];
+    [queue1 addOperations:@[operation3, operation2, operation1] waitUntilFinished:NO];
+    
+    
     
     /*三种多线程实现方式,NSThread,NSOperation,GCD
      该评价选自http://blog.csdn.net/charles91/article/details/50542940;
@@ -106,6 +135,19 @@
      
      3) GCD(全优点)
      Grand Central dispatch(GCD)是Apple开发的一个多核编程的解决方案。在iOS4.0开始之后才能使用。GCD是一个替代NSThread, NSOperationQueue,NSInvocationOperation等技术的很高效强大的技术。
+     
+     http://blog.csdn.net/chenglibin1988/article/details/12654367
+     
+     GCD是基于c的底层api，NSOperation属于object-c类。ios 首先引入的是NSOperation，IOS4之后引入了GCD和NSOperationQueue并且其内部是用gcd实现的。
+     
+     相对于GCD：
+     1，NSOperation拥有更多的函数可用，具体查看api。
+     2，在NSOperationQueue中，可以建立各个NSOperation之间的依赖关系。
+     3，有kvo，可以监测operation是否正在执行（isExecuted）、是否结束（isFinished），是否取消（isCanceld）。
+     4，NSOperationQueue可以方便的管理并发、NSOperation之间的优先级。
+     GCD主要与block结合使用。代码简洁高效。
+     GCD也可以实现复杂的多线程应用，主要是建立个个线程时间的依赖关系这类的情况，但是需要自己实现相比NSOperation要复杂。
+     具体使用哪个，依需求而定。 从个人使用的感觉来看，比较合适的用法是：除了依赖关系尽量使用GCD，因为苹果专门为GCD做了性能上面的优化。
      */
     
     // Do any additional setup after loading the view.
