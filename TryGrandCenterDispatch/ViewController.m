@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSOprationController.h"
 
 @interface ViewController ()
 
@@ -16,6 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIButton *goOprationController = [UIButton buttonWithType:UIButtonTypeCustom];
+    goOprationController.frame = CGRectMake(100, 100, 100, 40);
+    [goOprationController addTarget:self action:@selector(goOC) forControlEvents:UIControlEventTouchUpInside];
+    goOprationController.backgroundColor = [UIColor orangeColor];
+    [self.view addSubview:goOprationController];
     
     //任务--队列--串行队列--并行队列--同步执行--异步执行
     
@@ -121,6 +128,11 @@
     NSLog(@"barrier out");
     
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)goOC {
+    NSOprationController *noc = [[NSOprationController alloc] init];
+    [self presentViewController:noc animated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

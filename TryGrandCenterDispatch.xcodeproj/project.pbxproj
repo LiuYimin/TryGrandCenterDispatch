@@ -15,6 +15,7 @@
 		5A20482A1D2C9FB700FBF9B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A2048281D2C9FB700FBF9B8 /* LaunchScreen.storyboard */; };
 		5A2048351D2C9FB800FBF9B8 /* TryGrandCenterDispatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A2048341D2C9FB800FBF9B8 /* TryGrandCenterDispatchTests.m */; };
 		5A2048401D2C9FB800FBF9B8 /* TryGrandCenterDispatchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A20483F1D2C9FB800FBF9B8 /* TryGrandCenterDispatchUITests.m */; };
+		5A20484F1D2DEF9E00FBF9B8 /* NSOprationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A20484E1D2DEF9E00FBF9B8 /* NSOprationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		5A20483B1D2C9FB800FBF9B8 /* TryGrandCenterDispatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TryGrandCenterDispatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A20483F1D2C9FB800FBF9B8 /* TryGrandCenterDispatchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TryGrandCenterDispatchUITests.m; sourceTree = "<group>"; };
 		5A2048411D2C9FB800FBF9B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A20484D1D2DEF9E00FBF9B8 /* NSOprationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOprationController.h; sourceTree = "<group>"; };
+		5A20484E1D2DEF9E00FBF9B8 /* NSOprationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOprationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				5A20481E1D2C9FB700FBF9B8 /* AppDelegate.m */,
 				5A2048201D2C9FB700FBF9B8 /* ViewController.h */,
 				5A2048211D2C9FB700FBF9B8 /* ViewController.m */,
+				5A20484D1D2DEF9E00FBF9B8 /* NSOprationController.h */,
+				5A20484E1D2DEF9E00FBF9B8 /* NSOprationController.m */,
 				5A2048231D2C9FB700FBF9B8 /* Main.storyboard */,
 				5A2048261D2C9FB700FBF9B8 /* Assets.xcassets */,
 				5A2048281D2C9FB700FBF9B8 /* LaunchScreen.storyboard */,
@@ -272,6 +277,7 @@
 			files = (
 				5A2048221D2C9FB700FBF9B8 /* ViewController.m in Sources */,
 				5A20481F1D2C9FB700FBF9B8 /* AppDelegate.m in Sources */,
+				5A20484F1D2DEF9E00FBF9B8 /* NSOprationController.m in Sources */,
 				5A20481C1D2C9FB700FBF9B8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +504,7 @@
 				5A2048461D2C9FB800FBF9B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A2048471D2C9FB800FBF9B8 /* Build configuration list for PBXNativeTarget "TryGrandCenterDispatchTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +513,7 @@
 				5A2048491D2C9FB800FBF9B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5A20484A1D2C9FB800FBF9B8 /* Build configuration list for PBXNativeTarget "TryGrandCenterDispatchUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +522,7 @@
 				5A20484C1D2C9FB800FBF9B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
